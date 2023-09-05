@@ -13,8 +13,10 @@ null_ls.setup({
 	debug = false,
 	sources = {
     -- JS/TS
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     code_actions.eslint,
+    formatting.eslint,
+    diagnostics.eslint,
     -- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
     diagnostics.flake8,
@@ -26,6 +28,8 @@ null_ls.setup({
     -- Golang
     diagnostics.golangci_lint,
     code_actions.gomodifytags,
+    -- Rust
+    formatting.rustfmt,
     -- Misc
     diagnostics.hadolint,
     diagnostics.shellcheck,

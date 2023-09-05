@@ -10,6 +10,10 @@ local servers = {
   "emmet_ls",
   "elixirls",
   "terraformls",
+  "rust_analyzer",
+  "vuels",
+  "arduino_language_server",
+  "tailwindcss"
 }
 
 local settings = {
@@ -29,6 +33,14 @@ require("mason").setup(settings)
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,
+})
+
+require("lspconfig").arduino_language_server.setup({
+  cmd = {
+    "arduino_language_server",
+    "-cli-config",
+    "/home/jake/.arduinoIDE/arduino-cli.yaml"
+  }
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")

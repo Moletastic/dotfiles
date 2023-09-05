@@ -44,8 +44,8 @@ return packer.startup(function(use)
   use { "windwp/nvim-autopairs" }  -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
-  use { "nvim-tree/nvim-web-devicons" }
   use { "nvim-tree/nvim-tree.lua" }
+  use { "nvim-tree/nvim-web-devicons" }
   use { "akinsho/bufferline.nvim" }
   use { "moll/vim-bbye" }
   use { "nvim-lualine/lualine.nvim" }
@@ -68,6 +68,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { "CrispyBaccoon/gruvboxed" }
+  use { "sainnhe/gruvbox-material" }
   use { "mhartington/oceanic-next" }
   use { "Shatur/neovim-ayu" }
 
@@ -91,7 +92,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim" }        -- simple to use language server installer
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use "MunifTanjim/prettier.nvim"
+  -- use "MunifTanjim/prettier.nvim"
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" }
@@ -139,6 +140,26 @@ return packer.startup(function(use)
     config = function()
       require("barbecue").setup()
     end,
+  }
+
+  use { "nvim-neorg/neorg-telescope" }
+
+  use {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers",
+    requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
+  }
+
+  use { "klen/nvim-test" }
+
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use "mxsdev/nvim-dap-vscode-js"
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
