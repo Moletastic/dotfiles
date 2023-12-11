@@ -71,6 +71,15 @@ return packer.startup(function(use)
   use { "sainnhe/gruvbox-material" }
   use { "mhartington/oceanic-next" }
   use { "Shatur/neovim-ayu" }
+  use {
+    'olivercederborg/poimandres.nvim',
+    config = function()
+      require('poimandres').setup {
+      }
+    end
+  }
+  use 'AlexvZyl/nordic.nvim'
+  use 'savq/melange-nvim'
 
   -- css
   use { "brenoprata10/nvim-highlight-colors" }
