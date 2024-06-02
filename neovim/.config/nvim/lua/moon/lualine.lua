@@ -26,7 +26,7 @@ local diff = {
 	"diff",
 	colored = true,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -38,10 +38,10 @@ local mode = {
 
 local filetype = {
 	"filetype",
-  colored = true,
-  icon_only = true,
+	colored = true,
+	icon_only = true,
 	icons_enabled = true,
-	icon = { align = 'right'},
+	icon = { align = "right" },
 }
 
 local branch = {

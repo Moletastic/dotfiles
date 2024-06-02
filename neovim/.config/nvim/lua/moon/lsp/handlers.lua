@@ -2,7 +2,8 @@ local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
-	return end
+	return
+end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -52,13 +53,12 @@ end
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
-	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+	keymap(bufnr, "n", "<leader>f", "<cmd>:Format<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	keymap(bufnr, "n", "<F3>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -70,7 +70,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
@@ -81,13 +80,13 @@ M.on_attach = function(client, bufnr)
 
 	lsp_keymaps(bufnr)
 
-  if client.server_capabilities.documentSymbolProvider then
-    local status_navic, navic = pcall(require, "nvim-navic")
-    if not status_navic then
-      return
-    end
-    navic.attach(client, bufnr)
-  end
+	if client.server_capabilities.documentSymbolProvider then
+		local status_navic, navic = pcall(require, "nvim-navic")
+		if not status_navic then
+			return
+		end
+		navic.attach(client, bufnr)
+	end
 end
 
 return M

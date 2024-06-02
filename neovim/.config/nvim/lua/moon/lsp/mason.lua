@@ -11,7 +11,6 @@ local servers = {
   "elixirls",
   "terraformls",
   "rust_analyzer",
-  "vuels",
   "arduino_language_server",
   "tailwindcss"
 }
