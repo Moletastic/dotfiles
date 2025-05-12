@@ -1,26 +1,27 @@
-require "moon.options"
-require "moon.keymaps"
-require "moon.plugins"
-require "moon.colorscheme"
-require "moon.cmp"
-require "moon.lsp.init"
-require "moon.nvim-navic"
-require "moon.nvim-web-devicons"
-require "moon.nvim-tree"
-require "moon.telescope"
-require "moon.autopairs"
-require "moon.comment"
-require "moon.bufferline"
-require "moon.lualine"
+require("moon.options")
+require("moon.keymaps")
+require("config.lazy")
+require("moon.colorscheme")
+require("moon.cmp")
+require("moon.lsp.init")
+require("moon.nvim-navic")
+require("moon.nvim-web-devicons")
+require("moon.nvim-tree")
+require("moon.telescope")
+require("moon.autopairs")
+require("moon.comment")
+require("moon.bufferline")
+require("moon.lualine")
+require("moon.rest")
 -- require "moon.prettier"
-require "moon.bookmarks"
-require "moon.gitsigns"
-require "moon.treesitter"
-require "moon.nvim-highlight-colors"
-require "moon.aerial"
-require "moon.trouble"
-require "moon.filetype"
-require "moon.nvim-test"
-require "moon.dap"
-require "moon.fidget"
---require "moon.neorg"
+require("moon.bookmarks")
+require("moon.gitsigns")
+require("moon.treesitter")
+require("moon.nvim-highlight-colors")
+-- require "moon.aerial"
+require("moon.trouble")
+require("moon.filetype")
+require("moon.nvim-test")
+require("moon.dap")
+require("moon.fidget")
+-- require "moon.neorg"

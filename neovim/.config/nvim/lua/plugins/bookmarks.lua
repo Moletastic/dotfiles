@@ -1,0 +1,3 @@
+return {
+  "tomasky/bookmarks.nvim"
+}

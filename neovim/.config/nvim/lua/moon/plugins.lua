@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	use({ "ahmedkhalf/project.nvim" })
 	-- use { "lewis6991/impatient.nvim" }
 	use({ "lukas-reineke/indent-blankline.nvim" })
-	use({ "folke/which-key.nvim" })
+	-- use({ "folke/which-key.nvim" })
 	use({ "folke/trouble.nvim" })
 	use({
 		"numToStr/Comment.nvim",
@@ -161,15 +161,8 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- use({ "nvim-neorg/neorg-telescope" })
-	--
-	-- use({
-	-- 	"nvim-neorg/neorg",
-	-- 	run = ":Neorg sync-parsers",
-	-- 	requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
-	-- })
-
 	use({ "klen/nvim-test" })
+	use({ "BlackLight/nvim-http" })
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
@@ -192,9 +185,11 @@ return packer.startup(function(use)
 
 	use({ "zootedb0t/citruszest.nvim" })
 	use("felipeagc/fleet-theme-nvim")
+	use("rebelot/kanagawa.nvim")
+	use("Mofiqul/adwaita.nvim")
+	use("aliqyan-21/darkvoid.nvim")
 	use("AhmedAbdulrahman/aylin.vim")
 	use({ "vimwiki/vimwiki" })
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
