@@ -1,0 +1,8 @@
+neovim/.config/nvim/lazy-lock.json
+neovim/.config/nvim/.bookmarks
+
+pueue/.config/systemd/user/default.target.wants
+
+ranger/.config/ranger/plugins
+
+tmux/.config/tmux/plugins
