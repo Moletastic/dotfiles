@@ -1,0 +1,31 @@
+# ===== GRUVBOX COLOR THEME =====
+# Colors match Gruvbox Dark (https://github.com/morhetz/gruvbox)
+set color "gruvbox"  # Default colors (dir,marked,hidden,user,group,other)
+
+# File type colors (matches Gruvbox palette)
+# color normal       "#ebdbb2" "#282828"  # Base foreground/background
+# color directory    "#fabd2f" "#282828"  # Yellow for directories
+# color link         "#83a598" "#282828"  # Blue for symlinks
+# color exec         "#b8bb26" "#282828"  # Green for executables
+# color archive      "#fe8019" "#282828"  # Orange for archives
+# color media        "#d3869b" "#282828"  # Purple for media files
+# color document     "#a89984" "#282828"  # Gray for documents
+
+# UI colors
+# color border       "#3c3836" "#3c3836"  # Darker gray border
+# color info         "#a89984" "#3c3836"  # Gray for info panel
+# color selected     "#282828" "#fabd2f"  # Yellow highlight on dark bg
+# color marked       "#282828" "#83a598"  # Blue highlight for marked files
+# color scrollbar    "#504945"            # Scrollbar color
+
+# ===== FUNCTIONALITY =====
+set icons true
+set preview true
+set hidden true       # Show hidden files
+set drawbox true      # Box drawing around UI
+set scrolloff 5       # Scroll offset
+set incsearch true    # Incremental search
+
+# Preview settings (same as before)
+set previewer ~/.config/lf/kitty-preview.sh
+set cleaner ~/.config/lf/kitty-cleaner.sh
