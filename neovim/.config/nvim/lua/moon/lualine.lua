@@ -55,20 +55,6 @@ local location = {
 	padding = 0,
 }
 
--- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
-end
-
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -81,9 +67,9 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { branch },
-		lualine_c = { { navic.get_location, cond = navic.is_available } },
+		lualine_c = { "filename", { navic.get_location, cond = navic.is_available } },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, filetype },
+		lualine_x = { diff, filetype },
 		lualine_y = { diagnostics },
 		lualine_z = {},
 	},
@@ -95,6 +81,18 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
-	extensions = {},
+	tabline = {
+    -- lualine_a = {},
+    -- lualine_b = {},
+    -- lualine_c = {},
+    -- lualine_x = {},
+    -- lualine_y = {},
+    -- lualine_z = {}
+  },
+	extensions = {
+    'lazy',
+    'mason',
+    'nvim-tree',
+    'trouble',
+  },
 })

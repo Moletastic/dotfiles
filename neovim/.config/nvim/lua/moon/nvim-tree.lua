@@ -6,7 +6,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-	print("rip")
 	return
 end
 

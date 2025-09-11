@@ -12,7 +12,7 @@ local servers = {
   "terraformls",
   "rust_analyzer",
   "arduino_language_server",
-  "tailwindcss"
+  "tailwindcss",
 }
 
 local settings = {
